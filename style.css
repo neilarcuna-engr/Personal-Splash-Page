@@ -1,0 +1,205 @@
+/* CSS Custom Properties for Easy Theming */
+:root {
+    --primary-bg: #ffffff; /* Clean white background */
+    --dark-bg: #f5f5f5; /* Subtle gray for dark mode */
+    --text-color: #000000; /* Black text for professionalism */
+    --dark-text-color: #333333; /* Dark gray for dark mode */
+    --accent-color: #0056b3; /* Professional blue accent */
+    --container-bg: #ffffff; /* White container */
+    --dark-container-bg: #e0e0e0; /* Light gray for dark mode */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --transition: all 0.3s ease;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif; /* Professional, clean font */
+    background: var(--primary-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.7;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    text-align: center;
+    background: var(--container-bg);
+    padding: 60px 50px;
+    border-radius: 0; /* Sharp edges for formality */
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+/* Avatar (Optional - Add to HTML if you have an image) */
+.avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 40px;
+    object-fit: cover;
+}
+
+/* Header */
+header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    letter-spacing: 1px; /* Slight spacing for elegance */
+}
+
+header .course {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #666666; /* Subtle gray */
+    margin-bottom: 20px;
+}
+
+header .divider {
+    border: none;
+    height: 1px;
+    background-color: #cccccc; /* Thin gray line */
+    margin: 30px auto;
+    width: 50%;
+}
+
+/* Description */
+.description p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 40px 0;
+    color: var(--text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; /* Justified for a formal look */
+}
+
+/* Social Links */
+.social-links h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.social-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.social-links li {
+    margin: 0;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 0; /* Sharp for professionalism */
+    transition: var(--transition);
+    background: transparent;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background: rgba(0, 86, 179, 0.05);
+}
+
+.social-links a i {
+    margin-right: 10px;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    margin-top: 40px;
+    padding: 12px 25px;
+    background: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#theme-toggle:hover {
+    background: #003d7a;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background: var(--dark-bg);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .container {
+    background: var(--dark-container-bg);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme header h1,
+body.dark-theme .description p,
+body.dark-theme .social-links h2 {
+    color: var(--dark-text-color);
+}
+
+body.dark-theme header .course {
+    color: #999999;
+}
+
+body.dark-theme .social-links a {
+    color: var(--dark-text-color);
+    border-color: #999999;
+}
+
+body.dark-theme .social-links a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 30px;
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+    .description p {
+        font-size: 1.1em;
+        text-align: center; /* Center on mobile for readability */
+    }
+    .social-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Accessibility: Focus States */
+a:focus, button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
